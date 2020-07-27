@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:panelGrid columns="3">
+                <h:outputLabel for="materia" value="Ingrese materia:"/>
+                <h:inputText id="materia" label="Ingrese materia" required="true" value="#{asignaturaBean.materia}"/>
+                <h:message for="materia"/>
+                
+                <h:outputLabel for="carrera" value="Carrera:"/>
+                <h:selectOneRadio id="carrera" value="#{asignaturaBean.carrera}">
+                <f:selectItem itemLabel="Ing" itemValue="Ing"/>
+                <f:selectItem itemLabel="Lic" itemValue="Lic"/>
+                </h:selectOneRadio>
+                <h:message for="carrera"/>
+                
+                <h:outputLabel for="Profesor" value="Profesor:"/>
+                <h:selectManyCheckbox id="Profesor" value="#{asignaturaBean.profesor}">
+                    <f:selectItem itemLabel="Geovanny Litardo" itemValue="Geovanny Litardo"/>
+                    <f:selectItem itemLabel="Mariuxi Toapanta" itemValue="Mariuxi Toapanta"/>
+                    <f:selectItem itemLabel="Otto " itemValue="Otto"/>
+                    <f:selectItem itemLabel="Alcivar" itemValue="Alcivar"/>
+                    <f:selectItem itemLabel="Trujillo" itemValue="Trujillo"/>
+                    <f:selectItem itemLabel="Zapata" itemValue="Zapata"/>
+                </h:selectManyCheckbox>
+                <h:message for="profesor"/>
+                
+                <h:outputLabel for="ciclo" value="ciclo:"/>
+                <h:selectOneMenu id="ciudad" label="ciudad" value="#{asignaturaBean.ciclo}">
+                    <f:selectItem itemLabel="2019-2020" itemValue="2019-2020"/>
+                    <f:selectItem itemLabel="2020-2021" itemValue="2020-2021"/>
+                </h:selectOneMenu>
+                <h:message for="ciclo"/>
+                
+                 <h:commandButton action="Consultar" value="Ingresar"/>  
+                
+                
+            </h:panelGrid>
+        </h:form>
+    </h:body>
+</html>
+
